@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get extension</title>
+	<script>
+		function init(){
+			btn = document.getElementById('btnGet');
+			file = document.getElementById('txtFile');
+			msj = document.getElementById('extension');
+			btn.addEventListener('click',getExtension,false);
+		}
+
+		function getExtension(){
+			var c = file.value;
+			found = c.lastIndexOf('.') + 1;
+			ext = found > 0 ? c.substr(found) : "";
+			msj.innerHTML = ext;
+		}
+
+		window.addEventListener('load',init,false);
+	</script>
+</head>
+<body>
+	<input id="txtFile" type="text" value="" />
+	<button id="btnGet">Dame la extensión</button>
+	<p id="extension"></p>
+</body>
+</html>
